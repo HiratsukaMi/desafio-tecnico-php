@@ -1,0 +1,76 @@
+<HTML>
+	<HEAD>
+		<TITLE> Bem-Vindo ao Gest&atilde;o Online! </TITLE>
+		
+		<!--Validação de Formulário-->
+		<script language = "JavaScript">
+			function validaForm(){
+				senha = document.Login;
+				
+				//Bloco referente a validação de e-mail
+				
+				if (document.Login.E-mail.value == ""){
+					alert ("O campo " + Login.E-mail.name + " deve ser preenchido.");
+					return false;
+				}
+				
+				p1 = document.Login.E-mail.value.indexOf("@");
+				p2 = document.Login.E-mail.value.indexOf(".");
+				p3 = document.Login.E-mail.value.length;
+				
+				if (!(p1 >2 && p2 >6 && p3 >9)){
+					alert ("O campo deve ser preenchido com um endereço de e-mail válido.");
+					document.Login.E-mail.focus();
+					return false;
+				}
+				return true;
+			}
+			
+			//Configuração do Botão "Entrar"
+			
+			$(function () {
+				$("#button").dxButton({
+				text: "Enviar";
+				onClick: function() {
+				alert("The Button was clicked");
+			}
+		</script>
+	</HEAD>
+	<BODY>
+		<div align="center"><img src = "https://i.imgur.com/TnqIUVN.jpg">
+		
+		<font color = "#8B0000", align = "center"><h1><b> Seja bem-vindo ao gest&atilde;o online! </b></h1></font color><br>
+		<h3><p>Antes de prosseguir, efetue seu login abaixo: </h3></p>
+		<br>
+		</div>
+		
+		<!--Form de Login-->
+		<form name = "Login" align = "center" action "validacao.php" method = "post" onSubmit = "return validaForm()">
+			<table align = "center">
+				<tr>
+					<td align = "left">
+						<p>Digite seu usu&aacute;rio:
+					</td>
+					<td align = "left">
+						<input type = "text" name = "E-mail" size = "40">
+					</td>
+				</tr>
+				<tr>
+					<td align = "left">
+						<p>Digite sua senha:
+					</td>
+					<td align = "left">
+						<input type = "password" name = "Senha" size = "10" maxlength = "10">
+					</td>
+				</tr>
+				<tr>
+					<td colspan = "2" align = "center">
+						<p><input name = "entrar" type = "submit" value = "Entrar">
+						<input name = "limpar" type = "reset" value = "Limpar">
+					</td>
+				</tr>
+			</table>
+		</form>
+		
+	</BODY>
+	</HTML>
