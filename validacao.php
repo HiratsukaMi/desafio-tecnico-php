@@ -6,7 +6,7 @@
       $u = mysqli_real_escape_string($db,$_POST['user']);
       $p = mysqli_real_escape_string($db,$_POST['senha']); 
       
-      $sql = 'SELECT email.idEmail, email.email, cadastrousuario.idUser, cadastrousuario.senha FROM email, cadastrousuario WHERE email.email = $u and cadastrousuario.senha = $p';
+      $sql = "SELECT `email.idEmail`, `email.email`, `cadastrousuario.idUser`, `cadastrousuario.senha` FROM `email`, `cadastrousuario` WHERE `email.email` = '$u' and `cadastrousuario.senha` = '$p'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];

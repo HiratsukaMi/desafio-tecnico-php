@@ -3,7 +3,7 @@
 	function connect($host,$usr,$pw,$db) { 
 		try { 
 			$mysqli = new mysqli($host,$usr,$pw,$db); 
-			$connected = true; 
+			$con = true; 
 		} catch (mysqli_sql_exception $e) { 
 			throw $e; 
 		} 
