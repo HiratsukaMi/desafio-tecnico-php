@@ -21,8 +21,15 @@
 						alert ("O campo deve ser preenchido com um endereço de e-mail válido.");
 						document.login.email.focus();
 						return false;
+					}
+					
+				//Bloco referente a validação de senha
+				
+				if (document.login.senha.value == ""){
+					alert ("O campo " + document.login.senha.name + " deve ser preenchido.");
+					return false;
 				}
-					return true;
+				return true;
 			}
 		</script>
 	</HEAD>
