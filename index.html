@@ -5,7 +5,6 @@
 		<!--Validação de Formulário-->
 		<script language = "JavaScript">
 			function validaForm(){
-				senha = document.Login;
 				
 				//Bloco referente a validação de e-mail
 				
@@ -24,15 +23,6 @@
 					return false;
 				}
 				return true;
-			}
-			
-			//Configuração do Botão "Entrar"
-			
-			$(function () {
-				$("#button").dxButton({
-				text: "Enviar";
-				onClick: function() {
-				alert("The Button was clicked");
 			}
 		</script>
 	</HEAD>
@@ -65,7 +55,7 @@
 				</tr>
 				<tr>
 					<td colspan = "2" align = "center">
-						<p><input name = "entrar" type = "submit" value = "Entrar">
+						<input name = "entrar" type = "submit" value = "Entrar">
 						<input name = "limpar" type = "reset" value = "Limpar">
 					</td>
 				</tr>
