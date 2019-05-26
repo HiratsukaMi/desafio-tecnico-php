@@ -1,0 +1,26 @@
+#menuUser ul {
+    padding:0px;
+    margin:0px;
+    background-color:#8B0000;
+    list-style:none;
+	text-align: center;
+}
+
+#menuUser ul li { display: inline; }
+
+#menuUser ul li a {
+    padding: 2px 50px;
+    display: inline-block;
+
+    /* visual do link */
+    background-color:##8B0000;
+    color: #FFF;
+    text-decoration: none;
+    border-bottom:3px solid #8B0000;
+}
+
+#menuUser ul li a:hover {
+    background-color:#CD0000;
+    color: #FFFAFA;
+    border-bottom:3px solid #EA0000;
+}
