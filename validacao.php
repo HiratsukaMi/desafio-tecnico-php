@@ -13,13 +13,13 @@
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
       
-      $count = mysqli_num_rows($result);
+      $cont = mysqli_num_rows($result);
 		
-      if($count == 1) {
+      if($cont == 1) {
          session_register("user");
-         $_SESSION['login_user'] = $user;
+         $_SESSION['email'] = $user;
          
-         header("location: menuInicial.php");
+         header("location: menuInicial.html");
       }else {
          $error = "Seu e-mail ou senha estão incorretos.";
       }

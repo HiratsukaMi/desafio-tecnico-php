@@ -4,25 +4,25 @@
 		
 		<!--Validação de Formulário-->
 		<script language = "JavaScript">
-			function validaForm(){
+			function valida(){
 				
 				//Bloco referente a validação de e-mail
 				
-				if (document.Login.E-mail.value == ""){
-					alert ("O campo " + Login.E-mail.name + " deve ser preenchido.");
+				p1 = document.login.email.value.indexOf("@");
+				p2 = document.login.email.value.indexOf(".");
+				p3 = document.login.email.value.length;
+				
+				if (document.login.email.value == ""){
+					alert ("O campo " + document.login.email.name + " deve ser preenchido.");
 					return false;
 				}
-				
-				p1 = document.Login.E-mail.value.indexOf("@");
-				p2 = document.Login.E-mail.value.indexOf(".");
-				p3 = document.Login.E-mail.value.length;
-				
-				if (!(p1 >2 && p2 >6 && p3 >9)){
-					alert ("O campo deve ser preenchido com um endereço de e-mail válido.");
-					document.Login.E-mail.focus();
-					return false;
+				else
+					if (!(p1 > 2 && p2 > 6 && p3 > 9)){
+						alert ("O campo deve ser preenchido com um endereço de e-mail válido.");
+						document.login.email.focus();
+						return false;
 				}
-				return true;
+					return true;
 			}
 		</script>
 	</HEAD>
@@ -35,14 +35,14 @@
 		</div>
 		
 		<!--Form de Login-->
-		<form name = "Login" align = "center" action "validacao.php" method = "post" onSubmit = "return validaForm()">
+		<form name = "login" align = "center" action "validacao.php" method = "post" onSubmit = "return valida()">
 			<table align = "center">
 				<tr>
 					<td align = "left">
 						<p>Digite seu usu&aacute;rio:
 					</td>
 					<td align = "left">
-						<input type = "text" name = "E-mail" size = "40">
+						<input type = "text" name = "email" size = "40">
 					</td>
 				</tr>
 				<tr>
@@ -50,7 +50,7 @@
 						<p>Digite sua senha:
 					</td>
 					<td align = "left">
-						<input type = "password" name = "Senha" size = "10" maxlength = "10">
+						<input type = "password" name = "senha" size = "10" maxlength = "10">
 					</td>
 				</tr>
 				<tr>
@@ -61,6 +61,5 @@
 				</tr>
 			</table>
 		</form>
-		
 	</BODY>
 	</HTML>
