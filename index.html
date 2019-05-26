@@ -25,7 +25,7 @@
 					
 				//Bloco referente a validação de senha
 				
-				if (document.login.senha.value == ""){
+				if (document.login.senha.value == "" || document.login.senha.value < 4){
 					alert ("O campo " + document.login.senha.name + " deve ser preenchido.");
 					return false;
 				}

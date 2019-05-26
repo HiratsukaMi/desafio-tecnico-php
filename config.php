@@ -1,6 +1,13 @@
 <?php
-	$conexao = mysql_connect ("localhost", "root", "")
-		or die ("Não conectado.");
-	$db = mysql_select_db ("teste")
-		or die ("Banco não encontrado.");
+
+	define('DB_SERVER', 'localhost');
+	define('DB_USERNAME', 'root');
+	define('DB_PASSWORD', '');
+	define('DB_NAME', 'teste');
+
+	$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+ 
+	if($mysqli === false){
+		die("Não conectado. " . $mysqli->connect_error);
+}
 ?>
