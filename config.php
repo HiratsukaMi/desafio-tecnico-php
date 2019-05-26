@@ -1,13 +1,18 @@
 <?php
 
-	define('DB_SERVER', 'localhost');
-	define('DB_USERNAME', 'root');
-	define('DB_PASSWORD', '');
-	define('DB_NAME', 'teste');
+	function connect($host,$usr,$pw,$db) { 
+		try { 
+			$mysqli = new mysqli($host,$usr,$pw,$db); 
+			$connected = true; 
+		} catch (mysqli_sql_exception $e) { 
+			throw $e; 
+		} 
+	} 
 
-	$mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
- 
-	if($mysqli === false){
-		die("Não conectado. " . $mysqli->connect_error);
-}
+	try { 
+		connect('localhost','root','root','teste'); 
+		echo 'Connected to database'; 
+	} catch (Exception $e) { 
+		echo $e->errorMessage(); 
+	}  
 ?>

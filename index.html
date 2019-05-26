@@ -1,4 +1,4 @@
-<HTML>
+<!DOCTYPE HTML>
 	<HEAD>
 		<TITLE> Bem-Vindo ao Gest&atilde;o Online! </TITLE>
 		
@@ -8,18 +8,18 @@
 				
 				//Bloco referente a validação de e-mail
 				
-				p1 = document.login.email.value.indexOf("@");
-				p2 = document.login.email.value.indexOf(".");
-				p3 = document.login.email.value.length;
+				p1 = document.login.user.value.indexOf("@");
+				p2 = document.login.user.value.indexOf(".");
+				p3 = document.login.user.value.length;
 				
-				if (document.login.email.value == ""){
-					alert ("O campo " + document.login.email.name + " deve ser preenchido.");
+				if (document.login.user.value == ""){
+					alert ("O campo " + document.login.user.name + " deve ser preenchido.");
 					return false;
 				}
 				else
 					if (!(p1 > 2 && p2 > 6 && p3 > 9)){
 						alert ("O campo deve ser preenchido com um endereço de e-mail válido.");
-						document.login.email.focus();
+						document.login.user.focus();
 						return false;
 					}
 					
@@ -42,14 +42,14 @@
 		</div>
 		
 		<!--Form de Login-->
-		<form name = "login" align = "center" action "validacao.php" method = "post" onSubmit = "return valida()">
+		<form name = "login" align = "center" method = "POST" action "validacao.php" onSubmit = "return valida()">
 			<table align = "center">
 				<tr>
 					<td align = "left">
 						<p>Digite seu usu&aacute;rio:
 					</td>
 					<td align = "left">
-						<input type = "text" name = "email" size = "40">
+						<input type = "text" name = "user" size = "60">
 					</td>
 				</tr>
 				<tr>
@@ -69,4 +69,4 @@
 			</table>
 		</form>
 	</BODY>
-	</HTML>
+</HTML>
