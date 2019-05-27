@@ -17,7 +17,7 @@
 					return false;
 				}
 				else
-					if (!(p1 > 2 && p2 > 6 && p3 > 9)){
+					if (!(p1 >= 2 && p2 >= 6 && p3 >= 9)){
 						alert ("O campo deve ser preenchido com um endereço de e-mail válido.");
 						document.login.user.focus();
 						return false;
@@ -62,7 +62,7 @@
 				</tr>
 				<tr>
 					<td colspan = "2" align = "center">
-						<input name = "entrar" type = "submit" value = "Entrar">
+						<input id = "validacao.php" type = "submit" value = "Entrar">
 						<input name = "limpar" type = "reset" value = "Limpar">
 					</td>
 				</tr>

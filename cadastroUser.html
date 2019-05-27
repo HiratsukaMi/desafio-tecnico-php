@@ -1,36 +1,183 @@
 <!DOCTYPE HTML>
 	<HEAD>
-		<TITLE> Bem-Vindo ao Gest&atilde;o Online! </TITLE>
+		<TITLE> Cadastro de Usuário </TITLE>
 		
 		<link rel="stylesheet" type="text/css" href="style2.css">
 		
 		<!--Validação de Formulário-->
 		<script language = "JavaScript">
-			function valida(){
+
+			function formata(src, mask){		//Formatação de texto
+			
+				var i = src.value.length;
+				var saida = mask.substring(0,1);
+				var text = mask.substring(i);
+				
+				if(text.substring(0,1)!= saida){
+				
+					src.value += text.substring(0,1);
+				}
+			}
+			
+			function valida(){			//Valida formulário
+				
+				//Variáveis utilizadas
+				
+				p1 = document.cadastro.email.value.indexOf("@");
+				p2 = document.cadastro.email.value.indexOf(".");
+				p3 = document.cadastro.email.value.length;
+				
+				//Bloco referente a validação de nome
+				
+				if (document.cadastro.nome.value == ""){
+					alert ("O campo " + document.cadastro.nome.name + " deve ser preenchido.");
+					document.cadastro.nome.focus();
+					return false;
+				} else
+					if(document.cadastro.nome.value.length <= 9){
+						alert("O campo " + document.cadastro.nome.name + " deve ser preenchido com o nome completo.");
+						document.cadastro.nome.focus();
+						return false;
+					}
 				
 				//Bloco referente a validação de e-mail
 				
-				p1 = document.login.user.value.indexOf("@");
-				p2 = document.login.user.value.indexOf(".");
-				p3 = document.login.user.value.length;
-				
-				if (document.login.user.value == ""){
-					alert ("O campo " + document.login.user.name + " deve ser preenchido.");
+				if (document.cadastro.email.value == ""){
+					alert ("O campo " + document.cadastro.email.name + " deve ser preenchido.");
 					return false;
 				}
 				else
-					if (!(p1 > 2 && p2 > 6 && p3 > 9)){
+					if (!(p1 >= 2 && p2 >= 6 && p3 >= 9)){
 						alert ("O campo deve ser preenchido com um endereço de e-mail válido.");
-						document.login.user.focus();
+						document.cadastro.email.focus();
 						return false;
 					}
 					
 				//Bloco referente a validação de senha
 				
-				if (document.login.senha.value == "" || document.login.senha.value < 4){
-					alert ("O campo " + document.login.senha.name + " deve ser preenchido.");
+				if (document.cadastro.senha.value == "" || document.cadastro.senha.value < 4){
+					alert ("O campo " + document.cadastro.senha.name + " deve ser preenchido.");
 					return false;
 				}
+				
+				//Bloco referente a validação de RG
+				
+				if (document.cadastro.rg.value == ""){
+					alert ("O campo RG deve ser preenchido.");
+					document.cadastro.rg.focus();
+					return false;
+				}
+					
+				//Bloco referente a validação de CPF
+				
+				if (document.cadastro.cpf.value == ""){
+					alert ("O campo CPF deve ser preenchido.");
+					document.cadastro.cpf.focus();
+					return false;
+				}
+					
+				//Bloco referente a validação de data de nascimento
+				
+				if (document.cadastro.nasc.value == ""){
+					alert ("O campo data de nascimento deve ser preenchido.");
+					document.cadastro.nasc.focus();
+					return false;
+				}
+				
+				//Bloco referente a validação de telefone
+				
+				if (document.cadastro.tel.value == ""){
+					alert ("O campo telefone deve ser preenchido.");
+					document.cadastro.tel.focus();
+					return false;
+				}
+				
+				//Bloco referente a validação de endereço
+				
+				if (document.cadastro.end.value == ""){
+					alert ("O campo " + document.cadastro.end.name + " deve ser preenchido.");
+					document.cadastro.end.focus();
+					return false;
+				} else
+					if(document.cadastro.end.value.length <= 9){
+						alert("O campo " + document.cadastro.end.name + " deve ser preenchido com o nome completo.");
+						document.cadastro.end.focus();
+						return false;
+					}
+				
+				//Bloco referente a validação de bairro
+				
+				if (document.cadastro.bai.value == ""){
+					alert ("O campo " + document.cadastro.bai.name + " deve ser preenchido.");
+					document.cadastro.bai.focus();
+					return false;
+				} else
+					if(document.cadastro.bai.value.length <= 9){
+						alert("O campo " + document.cadastro.bai.name + " deve ser preenchido com o nome completo.");
+						document.cadastro.bai.focus();
+						return false;
+					}
+					
+				//Bloco referente a validação de CEP
+				
+				if (document.cadastro.cep.value == ""){
+					alert ("O campo CEP deve ser preenchido.");
+					document.cadastro.cep.focus();
+					return false;
+				}
+				
+				//Bloco referente a validação de cidade
+				
+				if (document.cadastro.cid.value == ""){
+					alert ("O campo " + document.cadastro.cid.name + " deve ser preenchido.");
+					document.cadastro.cid.focus();
+					return false;
+				} else
+					if(document.cadastro.cid.value.length <= 9){
+						alert("O campo " + document.cadastro.cid.name + " deve ser preenchido com o nome completo.");
+						document.cadastro.cid.focus();
+						return false;
+					}
+					
+				//Bloco referente a validação de empresa
+				
+				if (document.cadastro.emp.value == ""){
+					alert ("O campo " + document.cadastro.emp.name + " deve ser preenchido.");
+					document.cadastro.emp.focus();
+					return false;
+				} else
+					if(document.cadastro.emp.value.length <= 9){
+						alert("O campo " + document.cadastro.emp.name + " deve ser preenchido com o nome completo.");
+						document.cadastro.emp.focus();
+						return false;
+					}
+					
+				//Bloco referente a validação de estado
+				
+				if (document.cadastro.est.value == ""){
+					alert ("O campo " + document.cadastro.est.name + " deve ser preenchido.");
+					document.cadastro.est.focus();
+					return false;
+				} else
+					if(document.cadastro.est.value.length <= 9){
+						alert("O campo " + document.cadastro.est.name + " deve ser preenchido com o nome completo.");
+						document.cadastro.est.focus();
+						return false;
+					}
+					
+				//Bloco referente a validação de sigla
+				
+				if (document.cadastro.sig.value == ""){
+					alert ("O campo " + document.cadastro.sig.name + " deve ser preenchido.");
+					document.cadastro.sig.focus();
+					return false;
+				} else
+					if(document.cadastro.sig.value.length > 2){
+						alert("O campo " + document.cadastro.sig.name + " deve ser preenchido com a sigla do estado. Ex: SP");
+						document.cadastro.sig.focus();
+						return false;
+					}
+
 				return true;
 			}
 		</script>
@@ -57,7 +204,7 @@
 		</div>
 		
 		<!--Form de Cadastro-->
-		<form name = "login" align = "center" method = "POST" action "cadastroU.php" onSubmit = "return valida()">
+		<form name = "cadastro" align = "center" method = "POST" action "cadastroU.php" onSubmit = "return valida()">
 			<table align = "center">
 				<tr>
 					<td align = "left">
@@ -65,6 +212,14 @@
 					</td>
 					<td align = "left">
 						<input type = "text" name = "nome" size = "60">
+					</td>
+				</tr>
+				<tr>
+					<td align = "left">
+						Digite seu E-mail:
+					</td>
+					<td align = "left">
+						<input type = "text" name = "email" size = "60">
 					</td>
 				</tr>
 				<tr>
@@ -79,8 +234,8 @@
 					<td align = "left">
 						Digite seu RG:
 					</td>
-					<td align = "left" cellpadding = "15">
-						<input type = "text" name = "rg" size = "15">
+					<td align = "left">
+						<input type = "text" name = "rg" size = "15" OnKeyPress = " formata (this, ##.###.###-#)">
 					</td>
 				</tr>
 				<tr>
@@ -88,16 +243,71 @@
 						Digite seu CPF:
 					</td>
 					<td align = "left" cellpadding = "15">
-						<input type = "text" name = "cpf" size = "15">
+						<input type = "text" name = "cpf" size = "15" OnKeyPress = " formata (this, ###.###.###-##)">
 					</td>
-				</tr>
 				</tr>
 				<tr>
 					<td align = "left">
 						Digite sua data de nascimento:
 					</td>
 					<td align = "left">
-						<input type = "text" name = "nasc" size = "11">
+						<input type = "text" name = "nasc" size = "11" OnKeyPress = " formata (this, ##/##/####)">
+					</td>
+				</tr>
+				<tr>
+					<td align = "left">
+						Digite seu Telefone:
+					</td>
+					<td align = "left">
+						<input type = "text" name = "tel" size = "15" OnKeyPress = " formata (this, (##) #####-####)">
+					</td>
+				</tr>
+				<tr>
+					<td align = "left">
+						Digite seu Endereço:
+					</td>
+					<td align = "left">
+						<input type = "text" name = "end" size = "60">
+					</td>
+				</tr>
+				<tr>
+					<td align = "left">
+						Digite seu Bairro:
+					</td>
+					<td align = "left">
+						<input type = "text" name = "bai" size = "60">
+					</td>
+				</tr>
+				<tr>
+					<td align = "left">
+						Digite seu CEP:
+					</td>
+					<td align = "left">
+						<input type = "text" name = "cep" size = "10" OnKeyPress = " formata (this, #####-###)">
+					</td>
+				</tr>
+				<tr>
+					<td align = "left">
+						Digite sua Cidade:
+					</td>
+					<td align = "left">
+						<input type = "text" name = "cid" size = "40">
+					</td>
+				</tr>
+				<tr>
+					<td align = "left">
+						Digite seu Estado:
+					</td>
+					<td align = "left">
+						<input type = "text" name = "est" size = "20">
+					</td>
+				</tr>
+				<tr>
+					<td align = "left">
+						Sigla do estado:
+					</td>
+					<td align = "left">
+						<input type = "text" name = "sig" size = "2">
 					</td>
 				</tr>
 				<tr>
@@ -110,7 +320,7 @@
 				</tr>
 				<tr>
 					<td colspan = "2" align = "center">
-						<input name = "CadastrarU" type = "submit" value = "Cadastrar">
+						<input id = "cadastroU.php" type = "submit" value = "Cadastrar">
 						<input name = "limpar" type = "reset" value = "Limpar">
 					</td>
 				</tr>
